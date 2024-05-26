@@ -1,0 +1,242 @@
+/* CSS reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* general styling */
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  /* background-color: black; */
+  overflow-x: hidden;
+  background-image:linear-gradient(0deg, rgb(0, 0, 0, 0.9), rgb(0, 0, 0, 0.8)), url('images/bg-1.jpg');
+  background-size: cover;
+  background-position: center;
+  color: whitesmoke;
+  padding: 0 100px;
+}
+
+h1, h2, h3 {
+  font-family: cursive;
+  color: aqua;
+}
+
+
+/* header designs */
+header {
+  padding: 30px 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-container h1 {
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px greenyellow;
+}
+
+.nav-container ul {
+  list-style: none;
+  display: inline-flex;
+  font-size: 20px;
+}
+
+.nav-container ul a {
+  color: whitesmoke;
+  padding: 0 0 0 30px;
+  text-decoration: none;
+}
+
+.nav-container ul a:hover {
+  color: greenyellow;
+  text-decoration: overline;
+}
+
+
+/* hero section designs */
+/* hero1 */
+.hero1 {
+  width: 50%;
+  margin: 0 auto;
+  color: whitesmoke;
+  padding: 70px 0 20px;
+  text-align: center;
+}
+
+.hero1 h1{
+  color: yellowgreen;
+  background: linear-gradient(360deg, yellowgreen, aqua);
+  background-clip: text ;
+  -webkit-text-fill-color: transparent;
+  font-size: 3.5em;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+}
+
+.icons img {
+  width: 20px;
+  height: 20px;
+}
+
+.icons a {
+  background-color: yellowgreen;
+  padding: 10px ;
+  margin: 40px 20px 0 0;
+  border-radius: 10px;
+}
+
+.icons a:hover {
+  background-color: aqua;
+  border-radius: 0;
+}
+
+
+/* hero2 */
+.hero2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.hero2 img {
+  width: 200px;
+  height: 200px;
+  box-shadow: 1px 1px 5px white;
+}
+
+.hero2 .css {
+  margin-top: 100px;
+}
+
+.hero2 .nodejs {
+  margin-top: 100px;
+}
+
+
+
+
+/* main */
+/* section 1 */
+main {
+  padding: 100px 0 20px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.left-content h2{
+  font-size: 2em;
+  color: aqua;
+}
+
+.left-content .text-content{
+  font-size: 1.5em;
+  padding: 20px 0 30px;
+}
+
+.left-content h3{
+  font-size: 1.5em;
+  color: aqua;
+  padding: 0 0 10px ;
+}
+
+.left-content p {
+  padding: 10px 0;
+}
+
+.left-content label {
+  font-size: 1.1em;
+  color: yellowgreen;
+}
+
+/* about right-content */
+.about .right-content {
+  text-align: end;
+}
+
+.right-content img {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+}
+
+.about progress{
+  width: 100%;
+  height: 30px;
+  appearance: none;
+}
+
+.about progress::-webkit-progress-bar {
+  background-color: gray;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.about progress::-webkit-progress-value {
+  background-color: aqua;
+  border-radius: 15px 0 0 15px;
+  transition: width 0.25s;
+}
+
+.about progress::-moz-progress-bar {
+  background-color: gray;
+  border-radius: 15px;
+  transition: width 0.25s;
+}
+
+
+/* footer designs */
+.footer {
+  text-align: center;
+  padding: 100px 0 20px;
+}
+
+.footer h2 {
+  padding-bottom: 20px;
+  font-size: 2em;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.social-icons div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(245, 245, 245, 0.5);
+  width: 30%;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 3px whitesmoke;
+  margin: 10px 0;
+}
+
+.social-icons div img {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+}
+
+.copy {
+  padding: 30px 0 20px;
+}
+/* smaller screen sizes */
