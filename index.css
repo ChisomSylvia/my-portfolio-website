@@ -18,8 +18,13 @@ body {
   /* padding: 0 10%; */
 }
 
-h1, h2, h3 {
-  font-family: cursive;
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  color: aqua;
+}
+
+h2, h3 {
+  font-family: nunito;
   color: aqua;
 }
 
@@ -56,8 +61,9 @@ header {
 }
 
 .nav-container h1 {
+  font-family: cursive;
   font-size: 1.5em;
-  letter-spacing: 2px;
+  letter-spacing: 0px;
   /* text-shadow: 1px 1px 3px greenyellow; */
 }
 
@@ -93,7 +99,7 @@ header {
 
 /* main section designs */
 main {
-  padding: 10%;
+  padding: 8% 10%;
 }
 
 
@@ -239,10 +245,10 @@ background-color: aqua;
 /* portfolio designs */
 .portfolio {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 50px;
 }
 
 .article-portfolio h2 {
@@ -252,8 +258,8 @@ background-color: aqua;
 }
 
 .portfolio img {
-  width: 250px;
-  height: 270px;
+  width: 270px;
+  height: 280px;
   border-radius: 15px;
 }
 
@@ -275,10 +281,13 @@ background-color: aqua;
 }
 
 .social-icons {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 20px;
 }
 
 
@@ -288,11 +297,11 @@ background-color: aqua;
   align-items: center;
   background-color: rgb(0, 255, 255, 0.1);
   backdrop-filter: blur(5px);
-  width: 30%;
+  width: 90%;
+  margin: 0 auto;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 1px 1px 3px whitesmoke;
-  margin: 10px 0;
 }
 
 .social-icons div img {
@@ -307,12 +316,12 @@ background-color: aqua;
 
 
 /* Media queries */
-/* small screen sizes */
-@media (max-width: 998px) {
+/* large screen sizes */
+@media (max-width: 1024px) {
 
   /* general styling */
   main {
-    padding: 15% 8%;
+    padding: 10% 8%;
   }
 
 
@@ -430,19 +439,14 @@ background-color: aqua;
 
   /* portfolio designs */
   .portfolio {
-    justify-content: space-between;
     gap: 40px;
   }
 
-  .article-portfolio h2 {
-    font-size: 2em;
-  }
-
   .portfolio img {
-    width: 200px;
-    height: 220px;
+    width: 210px;
+    height: 240px;
   }
-
+  
 
   /* footer designs */
   .footer {
@@ -464,11 +468,11 @@ background-color: aqua;
 
 /* Media queries*/
 /* small screen sizes */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
   /* general styling */
   main {
-    padding: 20% 5%;
+    padding: 10% 5%;
   }
 
 
@@ -530,8 +534,7 @@ background-color: aqua;
 
   /* portfolio designs */
   .portfolio {
-    justify-content: space-between;
-    gap: 10px;
+    gap: 30px;
   }
 
   .article-portfolio h2 {
@@ -539,8 +542,8 @@ background-color: aqua;
   }
 
   .portfolio img {
-    width: 200px;
-    height: 230px;
+    width: 190px;
+    height: 220px;
   }
 
 
@@ -553,13 +556,89 @@ background-color: aqua;
     font-size: 1.5em;
   }
 
-  .social-icons div {
-    padding: 15px;
-  }
-
   .social-icons div img {
     width: 30px;
     height: 30px;
     border-radius: 5px;
+  }
+}
+
+
+
+/* Media queries*/
+/* small screen sizes */
+@media (max-width: 512px) {
+
+  /* general styling */
+  main {
+    padding: 15% 5%;
+  }
+
+
+  /* nav styling */
+  .nav-container {
+    padding: 30px 5%;
+  }
+
+  .nav-container .nav-menu a{
+    font-size: 1em;
+  }
+
+  
+  /***** hero section designs *****/
+  /* hero1 */
+
+  .hero1 h1{
+    font-size: 2em;
+  }
+
+  .hero1 h3{
+    font-size: 1em;
+  }
+
+  /* hero2 */
+  .hero2 img {
+    width: 70px;
+    height: 70px;
+  }
+
+
+  /* about section designs */
+  /* about left content designs */
+
+
+  .left-content h2{
+    font-size: 1.5em;
+  }
+
+  .left-content .text-content{
+    font-size: 1.05em;
+  }
+
+  .about progress{
+    width: 100%;
+  }
+
+
+  /* about right-content designs */
+  .about .right-content {
+    text-align: center;
+  }
+
+  .right-content img {
+    width: 250px;
+    height: 250px;
+  }
+
+
+  /* portfolio designs */
+  .portfolio {
+    justify-content: center;
+  }
+
+
+  /* footer designs */
+  .social-icons {
+    grid-template-columns: auto auto;
   }
 }
