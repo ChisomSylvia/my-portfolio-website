@@ -3,29 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <title>My Portfolio Page</title>
   <link rel="stylesheet" href="index.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <title>My Portfolio Page</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   
   <header>
     <nav class="nav-container" id="nav">
-        <!-- <img src="images/logo.png" alt="logo" width="64" height="64"> -->
         <h1>ChisomSylvia</h1>
 
-        <input type="checkbox" id="check">
-        <label for="check" class="hamburger">
-          <i class='bx bx-menu' id="menu-icon"></i>
-          <i class='bx bx-x' id="close-icon"></i>
-        </label>
         <ul class="nav-menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#" class="nav-item">Home</a></li>
+          <li><a href="#about" class="nav-item">About</a></li>
+          <li><a href="#portfolio" class="nav-item">Portfolio</a></li>
+          <li><a href="#contact" class="nav-item">Contact</a></li>
         </ul>
+
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
     </nav>
   </header>
 
@@ -34,10 +35,9 @@
       <section class="hero1">
         <h1>Hi! <br> I'm Chisom Sylvia</h1>
         <h3><em> a Web Developer</em></h3>
-        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut molestias consequuntur aperiam vero impedit iusto obcaecati quasi, fuga nam, enim ipsum sapiente accusamus itaque hic eligendi quos rerum magni. Repellendus?</p> -->
         <div class="icons">
-          <a href=""><img src="images/phone logo.png" alt="phone logo" width="30" height="30"></a>
-          <a href="mailto:"><img src="images/email logo.png" alt="email logo" width="30" height="30"></a>
+          <a href="tel:+2348105965272"><img src="images/phone logo.png" alt="phone logo" width="30" height="30"></a>
+          <a href="mailto:chisomsylvia95@gmail.com"><img src="images/email logo.png" alt="email logo" width="30" height="30"></a>
         </div>
       </section>
 
@@ -60,7 +60,7 @@
     <article class="about" id="about">
       <div class="left-content">
         <h2>Hello!</h2>
-        <p class="text-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eligendi rem. Debitis corporis doloribus quisquam impedit eius dicta, rem iure tempore quaerat recusandae odio ex, omnis est id eum possimus!</p>
+        <p class="text-content">I am Chisom Sylvia, a passionate backend web developer intern @ Genesys Tech Hub. I also have a fairly good background in front-end technologies such as HTML and CSS. I enjoy building simple, flexible, intuitive and appealing websites and APIs. Outside of the coding world, I 💙 having quiet times and carrying out research on topics such as beliefs, education and health</p>
         <h3>Professional Skills</h3>
         <p>
           <label for="progress-bar">
@@ -88,57 +88,71 @@
     <article class="article-portfolio" id="portfolio">
       <h2>My Portfolio</h2>
       <section class="portfolio">
-        <a href="https://fosters-bakery.netlify.app/"><img src="images/fostsers-bakery2.jpg" alt="" width="1080" height="1400"></a>
+        <div>
+          <a href="https://fosters-bakery.netlify.app/" target="_blank"><img src="images/cake2.png" alt=""></a>
+          <h3>Fosters Bakery Webpage</h3>
+          <p>HTML CSS JavaScript</p>
+        </div>
 
-        <a href="https://cat-trading-card.netlify.app/"><img src="images/cat-trading-card2.jpg" alt="" width="854" height="1576"></a>
+        <div>
+          <a href="https://cat-trading-card.netlify.app/" target="_blank"><img src="images/cat-beau.jpeg" alt=""></a>
+          <h3>Cat Trading Card</h3>
+          <p>HTML CSS </p>
+        </div>
 
-        <a href="https://movix-register.netlify.app/"><img src="images/register.jpg" alt="" width="1048" height="1189"></a>
+        <div>
+          <a href="https://movix-register.netlify.app/" target="_blank"><img src="images/headerbg-image.jpg" alt=""></a>
+          <h3>Movix Registration Page</h3>
+          <p>HTML, CSS, JavaScript </p>
+        </div>
 
-        <a href="https://score-board-b.netlify.app/"><img src="images/scoreboard.jpg" alt="" width="671" height="527"></a>
-
-        <a href="https://score-board-b.netlify.app/"><img src="images/movix.jpg" alt="" width="717" height="652"></a>
+        <div>
+          <a href="https://score-board-b.netlify.app/" target="_blank"><img src="images/scoreb.jpg" alt=""></a>
+          <h3>Score Board</h3>
+          <p>HTML, CSS, JavaScript </p>
+        </div>
       </section>
     </article>
   </main>
 
-<footer class="footer" id="contact">
-  <h2>Let's Connect</h2>
-  <section class="social-icons">
-    <div>
-      <p>Github</p>
-      <a href="#"><img src="images/github.png" alt="Github logo" width="48" height="48"></a>
-    </div>
+  <footer class="footer" id="contact">
+    <h2>Let's Connect</h2>
+    <section class="social-icons">
+      <div>
+        <p>Github</p>
+        <a href="https://github.com/ChisomSylvia" target="_blank"><i class="fa-brands fa-square-github icons"></i></a>
+      </div>
 
-    <div>
-      <p>Discord</p>
-      <a href="https://discord.com/chisom_sylvia_60128"><img src="images/discord.png" alt="discord logo" width="96" height="96"></a>
-    </div>
-  
-    <div>
-      <p>Facebook</p>
-      <a href="#"><img src="images/facebook-logo.png" alt="Facebook logo" width="96" height="96"></a>
-    </div>
-
-    <div>
-      <p>Instagram</p>
-      <a href="#"><img src="images/instagram-logo.png" alt="Instagram logo" width="96" height="96"></a>
-    </div>
-
-    <div>
-      <p>Twitter</p>
-      <a href="#"><img src="images/twitter-logo.png" alt="Twitter logo" width="96" height="96"></a>
-    </div>
-
-    <div>
-      <p>LinkedIn</p>
-      <a href="#"><img src="images/linkedin-logo.png" alt="LinkedIn logo" width="96" height="96"></a>
-    </div>
+      <div>
+        <p>Discord</p>
+        <a href="https://discord.com/chisom_sylvia_60128" target="_blank"><i class="fa-brands fa-discord icons"></i></a>
+      </div>
     
-  </section>
+      <div>
+        <p>Facebook</p>
+        <a href="https://www.facebook.com/sylvia.obi.167" target="_blank"><i class="fa-brands fa-facebook icons"></i></a>
+      </div>
 
-  <p class="copy">Copyright &copy; Chisom Sylvia. All right reserved</p>
-</footer>
+      <div>
+        <p>Instagram</p>
+        <a href="https://www.instagram.com/sylvie_cherry26" target="_blank"><i class="fa-brands fa-instagram icons"></i></i></a>
+      </div>
 
-<script src="index.js"></script>
+      <div>
+        <p>Twitter</p>
+        <a href="https://twitter.com/Chisom035203272" target="_blank"><i class="fa-brands fa-square-twitter icons"></i></a>
+      </div>
+
+      <div>
+        <p>LinkedIn</p>
+        <a href="https://www.linkedin.com/in/chisom-obi-a37727190" target="_blank"><i class="fa-brands fa-linkedin icons"></i></a>
+      </div>
+      
+    </section>
+
+    <p class="copy">Copyright &copy; Chisom Sylvia. All right reserved</p>
+  </footer>
+
+  <script src="index.js"></script>
 </body>
 </html>

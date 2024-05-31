@@ -1,21 +1,25 @@
-/* CSS reset */
+/***** CSS reset *****/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* general styling */
+
+/***** general styling *****/
+html {
+  scroll-behavior: smooth;
+  transition: 10s ease;
+}
+
 body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  /* background-color: black; */
   overflow-x: hidden;
   background-image:linear-gradient(0deg, rgb(0, 0, 0, 0.9), rgb(0, 0, 0, 0.8)), url('images/bg-2.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: whitesmoke;
-  /* padding: 0 10%; */
 }
 
 h1 {
@@ -29,9 +33,9 @@ h2, h3 {
 }
 
 
-/* header designs */
+/***** header designs *****/
 header {
-  padding: 50px 0 0;
+  padding: 70px 0 0;
 }
 
 .nav-container {
@@ -44,38 +48,23 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  /* background-color: rgb(0, 255, 255, 0.1);
-  backdrop-filter: blur(50px); */
-}
-
-.nav-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* background-color: rgb(0, 255, 255, 0.1);
-  backdrop-filter: blur(50px); */
-  z-index: -1;
 }
 
 .nav-container h1 {
   font-family: cursive;
   font-size: 1.5em;
-  letter-spacing: 0px;
-  /* text-shadow: 1px 1px 3px greenyellow; */
 }
 
 .nav-container .nav-menu {
   list-style: none;
   display: inline-flex;
   font-size: 1.2em;
+  gap: 50px;
 }
 
 .nav-container .nav-menu a {
   color: whitesmoke;
-  padding: 0 0 0 40px;
+  /* padding: 0 0 0 40px; */
   text-decoration: none;
 }
 
@@ -84,39 +73,47 @@ header {
   text-decoration: overline;
 }
 
-.hamburger {
-  position: absolute;
-  right: 5%;
-  font-size: 2em;
+.nav-container .hamburger {
+  display: none;
   cursor: pointer;
-  display: none;
 }
 
-#check {
-  display: none;
+.hamburger .bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 5px auto;
+  /* -webkit-transition: all 0.3s ease-in-out; */
+  transition: all 0.3s ease-in-out;
+  background-color: whitesmoke;
 }
 
 
-/* main section designs */
+/***** main section designs *****/
 main {
-  padding: 8% 10%;
+  padding: 100px 10%;
 }
 
 
 /***** hero section designs *****/
 /* hero1 */
 .hero1 {
-  width: 100%;
-  margin: 0 auto;
+  /* width: 100%; */
+  /* margin: 0 auto;      needed for width less than 100% */ 
   text-align: center;
 }
 
-.hero1 h1{
-  /* color: yellowgreen; */
+.hero1 h1 {
   background: linear-gradient(360deg, yellowgreen, aqua);
   background-clip: text ;
   -webkit-text-fill-color: transparent;
   font-size: 3.5em;
+}
+
+.hero1 h3 {
+  color: whitesmoke;
+  letter-spacing: 5px;
+  font-size: 1.5em;
 }
 
 .icons {
@@ -141,7 +138,6 @@ main {
   border-radius: 0;
 }
 
-
 /* hero2 */
 .hero2 {
   display: flex;
@@ -154,7 +150,7 @@ main {
 .hero2 img {
   width: 180px;
   height: 180px;
-  box-shadow: 1px 1px 5px white;
+  box-shadow: 1px 1px 5px whitesmoke;
 }
 
 .hero2 img:hover {
@@ -170,13 +166,13 @@ background-color: aqua;
 }
 
 
-/* about section designs */
+/***** about section designs *****/
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   align-items: center;
-  padding: 100px 0;
+  padding: 100px 0 0;
 }
 
 /* about left content designs */
@@ -186,7 +182,9 @@ background-color: aqua;
 }
 
 .left-content .text-content{
-  font-size: 1.5em;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  text-align: justify;
   padding: 20px 0 30px;
 }
 
@@ -203,12 +201,14 @@ background-color: aqua;
 .left-content label {
   font-size: 1.1em;
   color: yellowgreen;
+  line-height: 1.5em;
 }
 
 .about progress{
   width: 100%;
   height: 30px;
   appearance: none;
+  animation: progress 2s linear forwards;
 }
 
 .about progress::-webkit-progress-bar {
@@ -220,13 +220,22 @@ background-color: aqua;
 .about progress::-webkit-progress-value {
   background-color: aqua;
   border-radius: 15px 0 0 15px;
-  transition: width 0.25s;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
 
 .about progress::-moz-progress-bar {
   background-color: gray;
   border-radius: 15px;
-  transition: width 0.25s;
+  /* transition: width 0.25s; */
 }
 
 /* about right-content designs */
@@ -241,14 +250,9 @@ background-color: aqua;
 }
 
 
-
-/* portfolio designs */
-.portfolio {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 50px;
+/***** portfolio designs *****/
+.article-portfolio {
+  padding-top: 100px;
 }
 
 .article-portfolio h2 {
@@ -257,19 +261,39 @@ background-color: aqua;
   font-size: 2em;
 }
 
-.portfolio img {
-  width: 270px;
-  height: 280px;
-  border-radius: 15px;
+.portfolio {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 100%;
+  gap: 50px;
 }
 
-/* .portfolio img:nth-child(5) {
-  width: 300px;
-  height: 200px;
-} */
+.portfolio div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.portfolio h3 {
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+
+.portfolio p {
+  font-size: 1em;
+}
+
+.portfolio img {
+  width: 350px;
+  height: 250px;
+  border-radius: 50px 0;
+  border: 1px solid whitesmoke;
+  box-shadow: 0 0 5px whitesmoke;
+}
 
 
-/* footer designs */
+/***** footer designs *****/
 .footer {
   text-align: center;
   padding: 0 10% 2%;
@@ -281,15 +305,10 @@ background-color: aqua;
 }
 
 .social-icons {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; */
   display: grid;
   grid-template-columns: auto auto auto;
   row-gap: 20px;
 }
-
 
 .social-icons div {
   display: flex;
@@ -304,80 +323,36 @@ background-color: aqua;
   box-shadow: 1px 1px 3px whitesmoke;
 }
 
-.social-icons div img {
-  width: 50px;
-  height: 50px;
-  border-radius: 15px;
+.social-icons div .icons {
+  font-size: 35px;
+  color: whitesmoke;
+} 
+
+.social-icons div .icons:hover {
+  color: aqua;
 }
 
 .copy {
-  padding: 30px 0 20px;
+  padding: 50px 0 0;
 }
 
 
-/* Media queries */
+
+
+/***** Media queries *****/
 /* large screen sizes */
 @media (max-width: 1024px) {
-
-  /* general styling */
-  main {
-    padding: 10% 8%;
-  }
-
-
-  /* nav styling */
+  /***** nav styling *****/
   .nav-container {
     padding: 30px 8%;
-    background-color: none;
-    backdrop-filter: none;
   }
 
-  .hamburger {
-    display: inline-flex;
+
+  /***** general styling *****/
+  main {
+    padding: 90px 8%;
   }
 
-  #check:checked~.hamburger #menu-icon {
-    display: none;
-  }
-
-  .hamburger #close-icon {
-    display: none;
-  }
-
-  #check:checked~.hamburger #close-icon {
-    display: block;
-  }
-
-  .nav-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background-color: rgb(0, 255, 255, 0.1);
-    backdrop-filter: blur(50px);
-    box-shadow: 0 0.5em 1em rgb(245, 245, 245, 0.1);
-    overflow: hidden;
-    transition: 0.3s ease;
-  }
-
-  #check:checked~.nav-menu {
-    height: 17.7em;
-  }
-
-  .nav-container .nav-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-  }
-
-  .nav-container .nav-menu a{
-    font-size: 1.2em;
-    padding: 0;
-  }
-
-  
 
   /***** hero section designs *****/
   /* hero1 */
@@ -396,10 +371,11 @@ background-color: aqua;
   }
 
 
-  /* about section designs */
+  /***** about section designs *****/
   .about {
+    padding: 90px 0 0;
     grid-template-columns: 1fr;
-    row-gap: 50px;
+    row-gap: 30px;
   }
 
   /* about left content designs */
@@ -425,7 +401,6 @@ background-color: aqua;
     width: 80%;
   }
 
-
   /* about right-content designs */
   .about .right-content {
     text-align: center;
@@ -437,18 +412,18 @@ background-color: aqua;
   }
 
 
-  /* portfolio designs */
-  .portfolio {
-    gap: 40px;
+  /***** portfolio designs *****/
+  .article-portfolio {
+    padding-top: 90px;
   }
-
+  
   .portfolio img {
-    width: 210px;
-    height: 240px;
+    width: 300px;
+    height: 200px;
   }
   
 
-  /* footer designs */
+  /***** footer designs *****/
   .footer {
     padding: 0 8% 2%;
   }
@@ -461,34 +436,41 @@ background-color: aqua;
   .social-icons div {
     padding: 20px 15px;
   }
+
+  .social-icons div .icons {
+    font-size: 30px;
+  } 
 }
 
 
 
-
-/* Media queries*/
+/***** Media queries*****/
 /* small screen sizes */
 @media (max-width: 768px) {
-
-  /* general styling */
-  main {
-    padding: 10% 5%;
-  }
-
-
-  /* nav styling */
+  /***** nav styling *****/
   .nav-container {
-    padding: 30px 5%;
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: column;
   }
-
-  .nav-container .nav-menu a{
-    font-size: 1em;
-  }
-
   
+  .nav-container .nav-menu {
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  /***** general main styling *****/
+  main {
+    padding: 110px 5%;
+  }
+  
+
   /***** hero section designs *****/
   /* hero1 */
-
   .hero1 h1{
     font-size: 2em;
   }
@@ -504,12 +486,14 @@ background-color: aqua;
   }
 
 
-  /* about section designs */
+  /***** about section designs *****/
+  .about {
+    padding: 110px 0 0;
+  }
+  
   /* about left content designs */
-
-
   .left-content h2{
-    font-size: 1.5em;
+    font-size: 1.7em;
   }
 
   .left-content .text-content{
@@ -519,7 +503,6 @@ background-color: aqua;
   .about progress{
     width: 100%;
   }
-
 
   /* about right-content designs */
   .about .right-content {
@@ -532,59 +515,97 @@ background-color: aqua;
   }
 
 
-  /* portfolio designs */
-  .portfolio {
-    gap: 30px;
+  /***** portfolio designs *****/
+  .article-portfolio {
+    padding-top: 110px;
   }
 
   .article-portfolio h2 {
-    font-size: 1.5em;
+    font-size: 1.7em;
   }
 
+  .portfolio { 
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+  
   .portfolio img {
-    width: 190px;
-    height: 220px;
+    width: 350px;
+    height: 230px;
+    border-radius: 15px;
   }
 
 
-  /* footer designs */
+  /***** footer designs *****/
   .footer {
     padding: 0 5% 2%;
   }
 
   .footer h2 {
-    font-size: 1.5em;
+    font-size: 1.7em;
   }
 
-  .social-icons div img {
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
+  .social-icons div .icons {
+    font-size: 25px;
   }
 }
 
 
 
-/* Media queries*/
-/* small screen sizes */
+/***** Media queries *****/
+/* smaller screen sizes */
 @media (max-width: 512px) {
 
-  /* general styling */
-  main {
-    padding: 15% 5%;
-  }
-
-
-  /* nav styling */
   .nav-container {
+    flex-direction: row;
     padding: 30px 5%;
   }
 
-  .nav-container .nav-menu a{
-    font-size: 1em;
+  .nav-container .hamburger {
+    display: block;
   }
 
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-container .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: rgba(0, 255, 255, 0.1);
+    backdrop-filter: blur(50px);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    /* box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 1); */
+  }
+
+  .nav-container .nav-menu li {
+    margin: 16px 0;
+  }
+
+  .nav-container .nav-menu.active {
+    left: 0;
+  }
+
+
+  /***** general main body styling *****/
+  main {
+    padding: 80px 5%;
+  }
   
+
   /***** hero section designs *****/
   /* hero1 */
 
@@ -603,10 +624,12 @@ background-color: aqua;
   }
 
 
-  /* about section designs */
+  /***** about section designs *****/
+  .about{
+    padding: 100px 0 0;
+  }
+
   /* about left content designs */
-
-
   .left-content h2{
     font-size: 1.5em;
   }
@@ -619,7 +642,6 @@ background-color: aqua;
     width: 100%;
   }
 
-
   /* about right-content designs */
   .about .right-content {
     text-align: center;
@@ -631,14 +653,33 @@ background-color: aqua;
   }
 
 
-  /* portfolio designs */
-  .portfolio {
-    justify-content: center;
+  /***** portfolio designs *****/
+  .article-portfolio {
+    padding-top: 100px;
+  }
+
+  .portfolio img {
+    width: 250px;
+    height: 150px;
+    border-radius: 50px 0;
+  }
+
+  .portfolio h3 {
+    padding: 0.2em;
+    font-size: 1em;
+  }
+  
+  .portfolio p {
+    font-size: 0.8em;
   }
 
 
-  /* footer designs */
+  /***** footer designs *****/
   .social-icons {
     grid-template-columns: auto auto;
+  }
+
+  .social-icons div .icons {
+    font-size: 20px;
   }
 }
