@@ -9,7 +9,6 @@
 /***** general styling *****/
 html {
   scroll-behavior: smooth;
-  transition: 10s ease;
 }
 
 body {
@@ -310,7 +309,12 @@ background-color: aqua;
   row-gap: 20px;
 }
 
-.social-icons div {
+.social-icons a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.social-icons span {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -318,19 +322,19 @@ background-color: aqua;
   backdrop-filter: blur(5px);
   width: 90%;
   margin: 0 auto;
-  padding: 30px;
+  padding: 20px;
   border-radius: 15px;
   box-shadow: 1px 1px 3px whitesmoke;
 }
 
-.social-icons div .icons {
-  font-size: 35px;
+.social-icons span:hover {
+  background-color: rgb(154, 205, 50, 0.1);
+}
+
+.social-icons span .icons {
+  font-size: 30px;
   color: whitesmoke;
 } 
-
-.social-icons div .icons:hover {
-  color: aqua;
-}
 
 .copy {
   padding: 50px 0 0;
@@ -538,7 +542,7 @@ background-color: aqua;
 
   /***** footer designs *****/
   .footer {
-    padding: 0 5% 2%;
+    padding: 0 5% 3%;
   }
 
   .footer h2 {
@@ -602,7 +606,7 @@ background-color: aqua;
 
   /***** general main body styling *****/
   main {
-    padding: 80px 5%;
+    padding: 60px 5%;
   }
   
 
@@ -626,7 +630,7 @@ background-color: aqua;
 
   /***** about section designs *****/
   .about{
-    padding: 100px 0 0;
+    padding: 60px 0 0;
   }
 
   /* about left content designs */
@@ -655,7 +659,7 @@ background-color: aqua;
 
   /***** portfolio designs *****/
   .article-portfolio {
-    padding-top: 100px;
+    padding-top: 60px;
   }
 
   .portfolio img {
@@ -682,4 +686,87 @@ background-color: aqua;
   .social-icons div .icons {
     font-size: 20px;
   }
+
+  .footer h2 {
+    padding-bottom: 20px;
+    font-size: 1.5em;
+  }
+  
+}
+
+
+
+/***** Media queries *****/
+/* smaller screen sizes */
+@media (max-width: 370px) {
+
+  .nav-container {
+    flex-direction: row;
+    padding: 30px 3%;
+  }
+
+
+  /***** hero section designs *****/
+  /* hero1 */
+
+  .hero1 h1{
+    font-size: 1.5em;
+  }
+
+  /* hero2 */
+  .hero2 img {
+    width: 50px;
+    height: 50px;
+  }
+
+
+  /* about left content designs */
+  .left-content h2{
+    font-size: 1.2em;
+  }
+
+  .left-content .text-content{
+    font-size: 0.9em;
+  }
+
+  /* about right-content designs */
+  .right-content img {
+    width: 200px;
+    height: 200px;
+  }
+
+
+  /***** portfolio designs *****/
+
+  .article-portfolio h2 {
+    font-size: 1.2em;
+  }
+
+  .portfolio img {
+    width: 200px;
+    height: 120px;
+  }
+
+  .portfolio h3 {
+    font-size: 0.9em;
+  }
+  
+  .portfolio p {
+    font-size: 0.7em;
+  }
+
+
+  /***** footer designs *****/
+  .social-icons {
+    grid-template-columns: auto;
+  }
+
+  .social-icons div .icons {
+    font-size: 20px;
+  }
+
+  .footer h2 {
+    font-size: 1.2em;
+  }
+  
 }
